@@ -7,12 +7,12 @@ local BASE = 'https://raw.githubusercontent.com/napiaaazich-hash/Darkness897/mai
 local games = {
     [18687417158] = 'forsaken.lua',   -- Forsaken
     [142823291]   = 'mm2.lua',        -- MM2
+    [286090429]   = 'arsenal.lua',    -- Arsenal
 }
 
 local file = games[game.PlaceId]
 
 if file then
-    
     local player = game:GetService("Players").LocalPlayer
     local gui = Instance.new("ScreenGui")
     gui.Name = "LoaderNotification"
@@ -46,7 +46,6 @@ if file then
     info.Font = Enum.Font.Gotham
     info.Parent = frame
     
-    
     task.spawn(function()
         task.wait(2)
         gui:Destroy()
@@ -54,7 +53,6 @@ if file then
         loadstring(game:HttpGet(BASE .. file))()
     end)
 else
-    
     local player = game:GetService("Players").LocalPlayer
     local gui = Instance.new("ScreenGui")
     gui.Name = "LoaderNotification"
